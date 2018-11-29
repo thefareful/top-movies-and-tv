@@ -1,0 +1,14 @@
+<div class="header-{{mode}}">
+  <div class="controls">
+    <app-toggle-buttons (modeSelected)="setMode($event)"></app-toggle-buttons>
+    <input (keyup)="onSearchInput()" [(ngModel)]="searchText" class="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search">
+  </div>
+</div>
+
+<div *ngIf="mode == 2" class="title-container">
+  <app-title *ngFor="let show of shows | slice:0:10" [title]="show"></app-title>
+</div>
+
+<div *ngIf="mode == 1" class="title-container">
+  <app-title *ngFor="let movie of movies | slice:0:10" [title]="movie"></app-title>
+</div>

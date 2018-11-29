@@ -1,0 +1,33 @@
+.card-title{
+    text-align: center;
+}
+
+.mb-3{
+    margin: 0 !important;
+}
+
+.card{
+    animation: appear .7s ease-in;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+img{
+    transition: all .2s ease-in;
+}
+
+img:hover{
+    filter: brightness(1.2);
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
