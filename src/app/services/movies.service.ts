@@ -10,7 +10,8 @@ export class MoviesService {
   private movieData: Array<{
     name: string;
     image: string;
-    overview: string;
+    id: string;
+    overview: string
   }> = new Array();
   private moviesUpdated = new Subject<any>();
 
@@ -30,12 +31,13 @@ export class MoviesService {
           if(!movie.backdrop_path){
             image = "https://via.placeholder.com/300x170";
           } else{
-            image = "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path;
+            image = "https://image.tmdb.org/t/p/w1280/" + movie.backdrop_path;
           }
 
           this.movieData.push({
             name: movie.title,
             image: image,
+            id: movie.id,
             overview: movie.overview
           });
         });
@@ -62,18 +64,38 @@ export class MoviesService {
           if(!movie.backdrop_path){
             image = "https://via.placeholder.com/300x170";
           } else{
-            image = "https://image.tmdb.org/t/p/w500/" + movie.backdrop_path;
+            image = "https://image.tmdb.org/t/p/w1280/" + movie.backdrop_path;
           }
-          console.log(image);
           this.movieData.push({
             name: movie.title,
             image: image,
+            id: movie.id,
             overview: movie.overview
           });
         });
 
-        console.log(this.movieData);
         this.moviesUpdated.next(this.movieData);
       });
   }
+
+  
+  getMovie(id: string) {
+    let movie = this.movieData.find(movie => movie.id == id);
+    console.log(movie)
+    if (movie) {
+      localStorage.setItem("name", movie.name);
+      localStorage.setItem("image", movie.image);
+      localStorage.setItem("id", movie.id);
+      localStorage.setItem("overview", movie.overview);
+    } else {
+      movie = {
+        name: localStorage.getItem("name"),
+        image: localStorage.getItem("image"),
+        id: localStorage.getItem("id"),
+        overview: localStorage.getItem("overview")
+      };
+    }
+    return movie;
+  }
+  
 }

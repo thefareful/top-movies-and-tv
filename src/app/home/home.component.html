@@ -1,14 +1,24 @@
 <div class="header-{{mode}}">
   <div class="controls">
-    <app-toggle-buttons (modeSelected)="setMode($event)"></app-toggle-buttons>
+    <app-toggle-buttons [mode]="mode" (modeSelected)="setMode($event)"></app-toggle-buttons>
     <input (keyup)="onSearchInput()" [(ngModel)]="searchText" class="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search">
   </div>
 </div>
 
 <div *ngIf="mode == 2" class="title-container">
-  <app-title *ngFor="let show of shows | slice:0:10" [title]="show"></app-title>
+  <app-title (visited)="saveState()" *ngFor="let show of shows | slice:0:10" [title]="show"></app-title>
+  <div class="no-results" *ngIf="searchText">
+    <p *ngIf="shows.length == 0">
+      No results
+    </p>
+  </div>
 </div>
 
 <div *ngIf="mode == 1" class="title-container">
-  <app-title *ngFor="let movie of movies | slice:0:10" [title]="movie"></app-title>
+  <app-title (visited)="saveState()" *ngFor="let movie of movies | slice:0:10" [title]="movie"></app-title>
+  <div class="no-results" *ngIf="searchText">
+    <p *ngIf="movies.length == 0">
+      No results
+    </p>
+  </div>
 </div>

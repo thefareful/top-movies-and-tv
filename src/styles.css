@@ -8,7 +8,35 @@ main{
     width: 80%;
     background-color: white;
     min-height: calc(100vh - 60px);
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 0 auto;
     padding-bottom: 3rem;
     box-shadow: 0 1rem 2rem lightgrey;
+    position: relative;
+    overflow: hidden;
+}
+
+footer{
+    background-color: grey;
+    width: 80%;
+    height: 5rem;
+    margin: auto;
+    z-index: 2000;
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: whitesmoke;
+    padding-top: 1.5rem;
+}
+
+@media screen and (max-width: 500px){
+    main{
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    footer{
+        width: 100%;
+        margin: 0;
+    }
 }

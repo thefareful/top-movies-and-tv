@@ -14,14 +14,31 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Components
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-Home-
+Contains landing page for user, contains header with Toggle-buttons component and search input field, and Titles components
 
-## Running end-to-end tests
+-Toggle-buttons-
+Contains buttons used to toggle between views
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+-Title-
+Used to represent show/movie titles, contains title image, name, and a link to a Detailed view
 
-## Further help
+-Detailed-
+Used to represent show/movie detailed information, name, image and overview
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Services
+
+-Movies-
+Used to fetch movie data from API
+
+-Shows-
+Used to fetch show data from API
+
+-State-
+Used to remember the state of Home component before user visits Detailed component
+
+## Responsiveness
+
+App is responsive with media queries for screens < 500px wide

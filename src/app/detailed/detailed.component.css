@@ -1,0 +1,38 @@
+.btn-back{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 20;
+}
+
+.detailed-header{
+    width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
+    position: relative;
+}
+
+img{
+    width: 100%;
+    margin-top: -5%;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 19;
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: rgba(0,0,0, .6);
+    border-radius: 5px;
+}
+
+.detailed-header h2{
+    color: whitesmoke;
+}
+
+.overview{
+    width: 80%;
+    margin: auto;
+}

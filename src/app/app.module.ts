@@ -8,18 +8,24 @@ import { ToggleButtonsComponent } from './toggle-buttons/toggle-buttons.componen
 import { TitleComponent } from './title/title.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import { DetailedComponent } from './detailed/detailed.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ToggleButtonsComponent,
-    TitleComponent
+    TitleComponent,
+    DetailedComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
